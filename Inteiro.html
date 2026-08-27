@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TokusatsuMania</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- ========================= -->
+    <!-- CSS -->
+    <!-- ========================= -->
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+
+    <!-- ========================= -->
+    <!-- HTML -->
+    <!-- ========================= -->
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-helmet-safety"></i>
+                <span>TokusatsuMania</span>
+            </div>
+
+            <nav>
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#metal-heros" class="nav-link">Metal Heros</a>
+                <a href="#kamen-riders" class="nav-link">Kamen Riders</a>
+                <a href="#contato" class="nav-link">Contato</a>
+                <a href="#cadastro" class="nav-link">Cadastro</a>
+                <a href="#login" class="nav-link">Login</a>
+            </nav>
+
+            <div class="hamburger" id="hamburger-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#metal-heros" class="nav-link">Metal Heros</a>
+            <a href="#kamen-riders" class="nav-link">Kamen Riders</a>
+            <a href="#contato" class="nav-link">Contato</a>
+            <a href="#cadastro" class="nav-link">Cadastro</a>
+            <a href="#login" class="nav-link">Login</a>
+        </div>
+    </header>
+
+    <!-- BANNER -->
+    <section class="banner" id="home">
+        <div class="banner-rotator">
+            <div class="banner-slide active"
+                 style="background-image:url('https://upload.wikimedia.org/wikipedia/pt/3/3a/Juspion.jpg');"></div>
+            <div class="banner-slide"
+                 style="background-image:url('https://upload.wikimedia.org/wikipedia/pt/4/4f/Winspector.jpg');"></div>
+            <div class="banner-slide"
+                 style="background-image:url('https://upload.wikimedia.org/wikipedia/pt/4/4f/Kamen_Rider_Black_RX.jpg');"></div>
+            <div class="banner-slide"
+                 style="background-image:url('https://upload.wikimedia.org/wikipedia/en/7/7d/Kamen_Rider_Drive.png');"></div>
+        </div>
+
+        <div class="banner-content">
+            <h1>Bem-vindo ao <span>TokusatsuMania</span></h1>
+            <p>O universo dos Metal Heroes e Kamen Riders em um só lugar. Nostalgia, ação e justiça!</p>
+            <div class="banner-buttons">
+                <button class="btn-primary" onclick="scrollToSection('metal-heros')">
+                    <i class="fa-solid fa-play"></i> Explorar
+                </button>
+                <button class="btn-secondary" onclick="scrollToSection('cadastro')">
+                    <i class="fa-solid fa-user-plus"></i> Criar conta
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- PÁGINA PRINCIPAL -->
+    <!-- ========================= -->
+    <main>
+        <!-- METAL HEROS -->
+        <section id="metal-heros">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Metal Heros em destaque</h2>
+                    <p class="section-subtitle">Clique em um herói para ver mais detalhes.</p>
+                </div>
+                <div style="display:flex; gap:1rem; align-items:center;">
+                    <div class="search-bar">
+                        <input type="text" id="search-metal" placeholder="Buscar Metal Heros...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="counter">
+                        Total de Metal Heros: <span id="total-metal">4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-grid" id="metal-grid"></div>
+        </section>
+
+        <!-- KAMEN RIDERS -->
+        <section id="kamen-riders">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Kamen Riders em destaque</h2>
+                    <p class="section-subtitle">Clique em um Rider para ver mais detalhes.</p>
+                </div>
+                <div style="display:flex; gap:1rem; align-items:center;">
+                    <div class="search-bar">
+                        <input type="text" id="search-riders" placeholder="Buscar Kamen Riders...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="counter">
+                        Total de Kamen Riders: <span id="total-riders">4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-grid" id="riders-grid"></div>
+        </section>
+
+        <!-- CADASTRO / LOGIN -->
+        <section id="cadastro">
+            <div class="section-header">
+                <h2 class="section-title">Cadastro & Login</h2>
+                <p class="section-subtitle">Crie sua conta e acesse a TokusatsuMania.</p>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-card">
+                    <h3>Cadastro</h3>
+                    <p>Preencha os campos para criar sua conta.</p>
+                    <form id="cadastro-form">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text" id="cadastro-nome">
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="email" id="cadastro-email">
+                        </div>
+                        <div class="form-group">
+                            <label>Senha</label>
+                            <input type="password" id="cadastro-senha">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirmar senha</label>
+                            <input type="password" id="cadastro-confirmar">
+                        </div>
+                        <button class="btn-form" type="submit">Cadastrar</button>
+                        <div id="cadastro-mensagem" class="message"></div>
+                    </form>
+                </div>
+
+                <div class="form-card" id="login">
+                    <h3>Login</h3>
+                    <p>Acesse sua conta TokusatsuMania.</p>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="email" id="login-email">
+                        </div>
+                        <div class="form-group">
+                            <label>Senha</label>
+                            <input type="password" id="login-senha">
+                        </div>
+                        <button class="btn-form" type="submit">Entrar</button>
+                        <div id="login-mensagem" class="message"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato">
+            <div class="section-header">
+                <h2 class="section-title">Contato</h2>
+                <p class="section-subtitle">Envie sua mensagem para a TokusatsuMania.</p>
+            </div>
+            <div class="form-card" style="max-width:600px; margin:auto;">
+                <form id="contato-form">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" id="contato-nome">
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" id="contato-email">
+                    </div>
+                    <div class="form-group">
+                        <label>Mensagem</label>
+                        <textarea id="contato-mensagem"></textarea>
+                    </div>
+                    <button class="btn-form" type="submit">Enviar</button>
+                    <div id="contato-mensagem-status" class="message"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <span>TokusatsuMania © 2026 — Todos os direitos reservados.</span>
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img id="modal-image" src="" alt="">
+                </div>
+                <div class="modal-body">
+                    <h3 id="modal-title"></h3>
+                    <div id="modal-meta"></div>
+                    <div id="modal-rating"></div>
+                    <p id="modal-synopsis"></p>
+                    <button id="modal-close">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="back-to-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+        <!-- ========================= -->
+    <!-- JavaScript -->
+    <!-- ========================= -->
+    <script>
+        // =========================
+        // BANNER ROTATIVO
+        // =========================
+        let bannerIndex = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+
+        function rotateBanner() {
+            slides.forEach(s => s.classList.remove('active'));
+            bannerIndex = (bannerIndex + 1) % slides.length;
+            slides[bannerIndex].classList.add('active');
+        }
+        setInterval(rotateBanner, 5000);
+
+        // =========================
+        // SCROLL SUAVE
+        // =========================
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const top = el.getBoundingClientRect().top + window.scrollY - headerHeight + 5;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', e => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    scrollToSection(href.substring(1));
+                }
+            });
+        });
+
+        // =========================
+        // MENU HAMBÚRGUER
+        // =========================
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            mobileMenu.style.maxHeight = mobileMenu.classList.contains('open')
+                ? mobileMenu.scrollHeight + 'px'
+                : '0';
+        });
+
+        mobileMenu.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileMenu.style.maxHeight = '0';
+            });
+        });
+
+        // =========================
+        // DADOS DOS CARDS
+        // =========================
+        const metalHeros = [
+            {
+                id:1, tipo:'metal',
+                nome:'Jaspion',
+                categoria:'Metal Hero',
+                ano:1985,
+                duracao:'46 episódios',
+                avaliacao:9.2,
+                imagem:'https://upload.wikimedia.org/wikipedia/pt/3/3a/Juspion.jpg',
+                sinopse:'Jaspion é escolhido para enfrentar Satan Goss, viajando pelo espaço e pela Terra com sua armadura metálica e o robô Daileon.'
+            },
+            {
+                id:2, tipo:'metal',
+                nome:'Winspector',
+                categoria:'Polícia Especial',
+                ano:1990,
+                duracao:'49 episódios',
+                avaliacao:8.7,
+                imagem:'https://upload.wikimedia.org/wikipedia/pt/4/4f/Winspector.jpg',
+                sinopse:'Equipe especial da polícia que enfrenta crimes perigosos e situações de risco extremo com tecnologia avançada.'
+            },
+            {
+                id:3, tipo:'metal',
+                nome:'Metalder',
+                categoria:'Drama / Metal Hero',
+                ano:1987,
+                duracao:'39 episódios',
+                avaliacao:8.9,
+                imagem:'https://upload.wikimedia.org/wikipedia/pt/0/0f/Metalder.jpg',
+                sinopse:'Androide criado na guerra que desperta anos depois e enfrenta um império maligno enquanto busca entender sua existência.'
+            },
+            {
+                id:4, tipo:'metal',
+                nome:'Solbrain',
+                categoria:'Resgate / Metal Hero',
+                ano:1991,
+                duracao:'53 episódios',
+                avaliacao:8.4,
+                imagem:'https://upload.wikimedia.org/wikipedia/pt/7/7f/Solbrain.jpg',
+                sinopse:'Equipe de resgate avançada que lida com desastres, crimes e emergências com trajes metálicos e veículos especiais.'
+            }
+        ];
+
+        const kamenRiders = [
+            {
+                id:5, tipo:'rider',
+                nome:'Kamen Rider Black RX',
+                categoria:'Continuação',
+                temporadas:1,
+                ano:1988,
+                avaliacao:9.0,
+                imagem:'https://upload.wikimedia.org/wikipedia/pt/4/4f/Kamen_Rider_Black_RX.jpg',
+                sinopse:'Kotaro Minami se torna Black RX e enfrenta o império Crisis protegendo a Terra com novos poderes.'
+            },
+            {
+                id:6, tipo:'rider',
+                nome:'Kamen Rider Drive',
+                categoria:'Policial',
+                temporadas:1,
+                ano:2014,
+                avaliacao:8.5,
+                imagem:'https://upload.wikimedia.org/wikipedia/en/7/7d/Kamen_Rider_Drive.png',
+                sinopse:'Policial que usa um cinto especial e carros em miniatura para combater os Roidmudes que desaceleram o tempo.'
+            },
+            {
+                id:7, tipo:'rider',
+                nome:'Kamen Rider Kuuga',
+                categoria:'Renascimento',
+                temporadas:1,
+                ano:2000,
+                avaliacao:8.8,
+                imagem:'https://upload.wikimedia.org/wikipedia/en/5/5a/Kamen_Rider_Kuuga.png',
+                sinopse:'Yusuke Godai enfrenta os Grongi e protege as pessoas com diferentes formas de poder.'
+            },
+            {
+                id:8, tipo:'rider',
+                nome:'Kamen Rider W',
+                categoria:'Detetive',
+                temporadas:1,
+                ano:2009,
+                avaliacao:8.9,
+                imagem:'https://upload.wikimedia.org/wikipedia/en/8/8f/Kamen_Rider_W.png',
+                sinopse:'Dois detetives se tornam um único Rider e enfrentam crimes ligados às Gaia Memories na cidade de Fuuto.'
+            }
+        ];
+
+        // =========================
+        // RENDERIZAÇÃO DOS CARDS
+        // =========================
+        function criarCard(item) {
+            const card = document.createElement('article');
+            card.className = 'card';
+            card.dataset.id = item.id;
+
+            const img = document.createElement('img');
+            img.src = item.imagem;
+            img.alt = item.nome;
+
+            const content = document.createElement('div');
+            content.className = 'card-content';
+
+            const title = document.createElement('h3');
+            title.className = 'card-title';
+            title.textContent = item.nome;
+
+            const meta1 = document.createElement('p');
+            meta1.className = 'card-meta';
+            meta1.innerHTML = `<span>${item.categoria}</span><span>${item.ano}</span>`;
+
+            const meta2 = document.createElement('p');
+            meta2.className = 'card-meta';
+            meta2.textContent = item.tipo === 'metal'
+                ? `Duração: ${item.duracao}`
+                : `Temporadas: ${item.temporadas}`;
+
+            const footer = document.createElement('p');
+            footer.className = 'card-footer';
+            footer.innerHTML = `<i class="fa-solid fa-star"></i> ${item.avaliacao.toFixed(1)} / 10`;
+
+            content.appendChild(title);
+            content.appendChild(meta1);
+            content.appendChild(meta2);
+            content.appendChild(footer);
+
+            card.appendChild(img);
+            card.appendChild(content);
+
+            card.addEventListener('click', () => abrirModal(item));
+            return card;
+        }
+
+        function renderizarMetal(lista) {
+            const grid = document.getElementById('metal-grid');
+            grid.innerHTML = '';
+            lista.forEach(item => grid.appendChild(criarCard(item)));
+            document.getElementById('total-metal').textContent = lista.length;
+        }
+
+        function renderizarRiders(lista) {
+            const grid = document.getElementById('riders-grid');
+            grid.innerHTML = '';
+            lista.forEach(item => grid.appendChild(criarCard(item)));
+            document.getElementById('total-riders').textContent = lista.length;
+        }
+
+        // =========================
+        // MODAL
+        // =========================
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalTitle = document.getElementById('modal-title');
+        const modalMeta = document.getElementById('modal-meta');
+        const modalRating = document.getElementById('modal-rating');
+        const modalSynopsis = document.getElementById('modal-synopsis');
+        const modalCloseBtn = document.getElementById('modal-close');
+
+        function abrirModal(item) {
+            modalImage.src = item.imagem;
+            modalTitle.textContent = item.nome;
+            modalMeta.innerHTML = '';
+
+            const tipoSpan = document.createElement('span');
+            tipoSpan.textContent = item.tipo === 'metal' ? 'Metal Hero' : 'Kamen Rider';
+            modalMeta.appendChild(tipoSpan);
+
+            const catSpan = document.createElement('span');
+            catSpan.textContent = item.categoria;
+            modalMeta.appendChild(catSpan);
+
+            const anoSpan = document.createElement('span');
+            anoSpan.textContent = item.ano;
+            modalMeta.appendChild(anoSpan);
+
+            const extraSpan = document.createElement('span');
+            extraSpan.textContent = item.tipo === 'metal'
+                ? item.duracao
+                : `${item.temporadas} temporada(s)`;
+            modalMeta.appendChild(extraSpan);
+
+            modalRating.innerHTML = `<i class="fa-solid fa-star"></i> Avaliação: ${item.avaliacao.toFixed(1)} / 10`;
+            modalSynopsis.textContent = item.sinopse;
+
+            modalOverlay.classList.add('active');
+            modal.classList.add('active');
+        }
+
+        function fecharModal() {
+            modalOverlay.classList.remove('active');
+            modal.classList.remove('active');
+        }
+
+        modalCloseBtn.addEventListener('click', fecharModal);
+        modalOverlay.addEventListener('click', e => {
+            if (e.target === modalOverlay) fecharModal();
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') fecharModal();
+        });
+
+        // =========================
+        // BUSCA / FILTRO
+        // =========================
+        const searchMetalInput = document.getElementById('search-metal');
+        const searchRidersInput = document.getElementById('search-riders');
+
+        searchMetalInput.addEventListener('input', () => {
+            const termo = searchMetalInput.value.toLowerCase().trim();
+            const filtrados = metalHeros.filter(item =>
+                item.nome.toLowerCase().includes(termo) ||
+                item.categoria.toLowerCase().includes(termo)
+            );
+            renderizarMetal(filtrados);
+        });
+
+        searchRidersInput.addEventListener('input', () => {
+            const termo = searchRidersInput.value.toLowerCase().trim();
+            const filtrados = kamenRiders.filter(item =>
+                item.nome.toLowerCase().includes(termo) ||
+                item.categoria.toLowerCase().includes(termo)
+            );
+            renderizarRiders(filtrados);
+        });
+
+        // =========================
+        // BOTÃO VOLTAR AO TOPO
+        // =========================
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) backToTopBtn.classList.add('visible');
+            else backToTopBtn.classList.remove('visible');
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top:0, behavior:'smooth' });
+        });
+
+        // =========================
+        // VALIDAÇÕES FORMULÁRIOS
+        // =========================
+        function validarEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        const cadastroForm = document.getElementById('cadastro-form');
+        const cadastroMsg = document.getElementById('cadastro-mensagem');
+        cadastroForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const nome = document.getElementById('cadastro-nome').value.trim();
+            const email = document.getElementById('cadastro-email').value.trim();
+            const senha = document.getElementById('cadastro-senha').value;
+            const confirmar = document.getElementById('cadastro-confirmar').value;
+
+            cadastroMsg.textContent = '';
+            cadastroMsg.className = 'message';
+
+            if (!nome || !email || !senha || !confirmar) {
+                cadastroMsg.textContent = 'Preencha todos os campos.';
+                cadastroMsg.classList.add('error');
+                return;
+            }
+            if (!validarEmail(email)) {
+                cadastroMsg.textContent = 'E-mail inválido.';
+                cadastroMsg.classList.add('error');
+                return;
+            }
+            if (senha.length < 6) {
+                cadastroMsg.textContent = 'Senha deve ter pelo menos 6 caracteres.';
+                cadastroMsg.classList.add('error');
+                return;
+            }
+            if (senha !== confirmar) {
+                cadastroMsg.textContent = 'Senha e confirmação não coincidem.';
+                cadastroMsg.classList.add('error');
+                return;
+            }
+            cadastroMsg.textContent = 'Cadastro realizado com sucesso!';
+            cadastroMsg.classList.add('success');
+            cadastroForm.reset();
+        });
+
+        const loginForm = document.getElementById('login-form');
+        const loginMsg = document.getElementById('login-mensagem');
+        loginForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value.trim();
+            const senha = document.getElementById('login-senha').value;
+
+            loginMsg.textContent = '';
+            loginMsg.className = 'message';
+
+            if (!email || !senha) {
+                loginMsg.textContent = 'Preencha e-mail e senha.';
+                loginMsg.classList.add('error');
+                return;
+            }
+            if (!validarEmail(email)) {
+                loginMsg.textContent = 'E-mail inválido.';
+                loginMsg.classList.add('error');
+                return;
+            }
+            if (senha.length < 6) {
+                loginMsg.textContent = 'Senha muito curta.';
+                loginMsg.classList.add('error');
+                return;
+            }
+            loginMsg.textContent = 'Login realizado com sucesso! (simulação).';
+            loginMsg.classList.add('success');
+            loginForm.reset();
+        });
+
+        const contatoForm = document.getElementById('contato-form');
+        const contatoStatus = document.getElementById('contato-mensagem-status');
+        contatoForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const nome = document.getElementById('contato-nome').value.trim();
+            const email = document.getElementById('contato-email').value.trim();
+            const msg = document.getElementById('contato-mensagem').value.trim();
+
+            contatoStatus.textContent = '';
+            contatoStatus.className = 'message';
+
+            if (!nome || !email || !msg) {
+                contatoStatus.textContent = 'Preencha todos os campos.';
+                contatoStatus.classList.add('error');
+                return;
+            }
+            if (!validarEmail(email)) {
+                contatoStatus.textContent = 'E-mail inválido.';
+                contatoStatus.classList.add('error');
+                return;
+            }
+            contatoStatus.textContent = 'Mensagem enviada com sucesso!';
+            contatoStatus.classList.add('success');
+            contatoForm.reset();
+        });
+
+        // =========================
+        // INICIALIZAÇÃO
+        // =========================
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarMetal(metalHeros);
+            renderizarRiders(kamenRiders);
+        });
+    </script>
+
+</body>
+</html>
