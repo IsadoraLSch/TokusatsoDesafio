@@ -2,9 +2,10 @@
     <section id="contato" style="padding: 3rem 1rem;">
         <div class="section-header">
             <h2 class="section-title">Contato</h2>
-            <p class="section-subtitle">Envie sua mensagem para a TokusatsuMania.</p>
         </div>
         <div class="form-card" style="max-width:600px; margin:auto;">
+            <h3>Contato</h3>
+            <p class="section-subtitle">Envie sua mensagem para a TokusatsuMania.</p>
             <form id="contato-form">
                 <div class="form-group">
                     <label>Nome</label>

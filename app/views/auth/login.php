@@ -1,5 +1,5 @@
 <main>
-  <section style="max-width:600px; margin:2rem auto;">
+  <section id="login" style="max-width:600px; margin:2rem auto;">
     <div class="form-card">
       <h3>Login</h3>
       <p>Acesse sua conta TokusatsuMania.</p>

@@ -14,7 +14,6 @@ class HomeController {
         ob_start();
         require __DIR__ . '/../views/layout/header.php';
         require __DIR__ . '/../views/home.php';
-        require __DIR__ . '/../views/layout/footer.php';
         return ob_get_clean();
     }
 }

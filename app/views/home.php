@@ -63,20 +63,33 @@
         <div class="cards-grid" id="riders-grid"></div>
     </section>
 
-    <!-- CHAMADA DOS FORMULÁRIOS SEPARADOS -->
-    <?php 
-        // Carrega as views de formulário mantendo a estrutura original
-        if (file_exists(__DIR__ . '/auth/register.php')) {
-          require_once __DIR__ . '/auth/register.php';
-      }
-      if (file_exists(__DIR__ . '/auth/login.php')) {
-          require_once __DIR__ . '/auth/login.php';
-      }
-        if (file_exists(__DIR__ . '/contact.php')) {
-            require_once __DIR__ . '/contact.php';
-        }
-    ?>
-</main>
+    <!-- FORMULÁRIOS AGRUPADOS (LADO A LADO E CONTATO EMBAIXO) -->
+    <div class="forms-wrapper">
+            <section id="cadastro">
+                <?php 
+                    if (file_exists(__DIR__ . '/auth/register.php')) {
+                        require_once __DIR__ . '/auth/register.php';
+                    }
+                ?>
+            </section>
+
+            <section id="login">
+                <?php 
+                    if (file_exists(__DIR__ . '/auth/login.php')) {
+                        require_once __DIR__ . '/auth/login.php';
+                    }
+                ?>
+            </section>
+
+            <section id="contato" class="contact-section">
+                <?php 
+                    if (file_exists(__DIR__ . '/contact.php')) {
+                        require_once __DIR__ . '/contact.php';
+                    }
+                ?>
+            </section>
+        </div>
+    </main>
 
 <!-- PASSAGEM DE DADOS PHP PARA O JAVASCRIPT -->
 <script>

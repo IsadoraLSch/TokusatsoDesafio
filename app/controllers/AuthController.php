@@ -4,7 +4,6 @@ class AuthController {
         ob_start();
         require __DIR__ . '/../views/layout/header.php';
         require __DIR__ . '/../views/auth/login.php';
-        require __DIR__ . '/../views/layout/footer.php';
         return ob_get_clean();
     }
 
@@ -12,7 +11,6 @@ class AuthController {
         ob_start();
         require __DIR__ . '/../views/layout/header.php';
         require __DIR__ . '/../views/auth/register.php';
-        require __DIR__ . '/../views/layout/footer.php';
         return ob_get_clean();
     }
 

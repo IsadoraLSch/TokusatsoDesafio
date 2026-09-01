@@ -1,5 +1,5 @@
 <main>
-  <section style="max-width:600px; margin:2rem auto;">
+<section id="cadastro" style="max-width:600px; margin:2rem auto;">
     <div class="form-card">
       <h3>Cadastro</h3>
       <p>Preencha os campos para criar sua conta na TokusatsuMania.</p>

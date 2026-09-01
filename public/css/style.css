@@ -438,3 +438,24 @@ footer {
         gap: 0.8rem;
     }
 }
+
+.forms-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Faz a seção de contato ocupar as 2 colunas e ficar embaixo */
+  .forms-wrapper .contact-section {
+    grid-column: span 2;
+  }
+  
+  /* Ajuste para dispositivos móveis (telas menores que 768px) */
+  @media (max-width: 768px) {
+    .forms-wrapper {
+      grid-template-columns: 1fr;
+    }
+    
+    .forms-wrapper .contact-section {
+      grid-column: span 1;
+    }
+  }
